@@ -1,0 +1,36 @@
+file --> vscode
+  - write workflow
+	- name 
+
+	- code -> push -> 
+
+create 2 jobs one runs on ubuntu and one on windows
+
+
+
+---------------------
+- .github 
+     - workflows
+	   - main.yml
+- pyton.py
+
+run this file viva github action
+
+
+name: Super-Linter
+
+on: push
+
+jobs:
+  super-lint:
+    name: Lint code base
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Super-Linter
+        uses: github/super-linter@v4
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
