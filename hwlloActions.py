@@ -1,4 +1,4 @@
 def hllo():
-    print("Hello world from the github actions.")
+    return "Hello world from the github actions."
 
-hllo()
+print(hllo())
