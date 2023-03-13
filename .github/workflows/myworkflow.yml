@@ -3,8 +3,8 @@ name: Myworkflow
 on: push
 
 jobs:
-  crt-wf:
-    name: Lint code base
+  crt-wf-ubuntu:
+    name: Lint code base in ubuntu
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -15,4 +15,21 @@ jobs:
         with:
           python-version: '3.10'
       - run: python hwlloActions.py
-      
+
+      - name: Every time
+        run: echo "This step will always run"
+
+  
+  crt-wf-windows:
+    name: Lint code base in windows
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: python hwlloActions.py
+  
