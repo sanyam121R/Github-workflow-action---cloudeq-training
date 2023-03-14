@@ -50,6 +50,7 @@ jobs:
 
 
   crt-wf-macos:
+    name: Using input and env context  
     env:
       name: ${{ github.event.inputs.jake }}
       eye-color: ${{ github.event.inputs.jakes-eye-color }}
