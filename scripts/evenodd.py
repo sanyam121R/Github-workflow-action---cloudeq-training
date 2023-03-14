@@ -1,3 +1,5 @@
+import sys
+
 def evenodd(a, b):
     if int(a)%2==0 or int(b)%2==0:
         print("Even")
@@ -5,6 +7,7 @@ def evenodd(a, b):
         print("Odd")
 
 # l = list(map(int, input().split()))
+a = int(sys.argv[1])
+b = int(sys.argv[2])
 
-a, b = input().split()
 evenodd(a, b)
