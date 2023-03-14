@@ -2,7 +2,7 @@ name: Myworkflow
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   crt-wf-ubuntu:
