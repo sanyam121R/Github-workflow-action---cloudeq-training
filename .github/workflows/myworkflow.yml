@@ -35,3 +35,30 @@ jobs:
         with:
           python-version: '3.10'
       - run: python scripts/prime.py 456
+
+
+  crt-wf-macos:
+    runs-on: macos-latest
+    inputs:
+      jake:
+        description: 'Name of my friend'
+        required: false
+        default: "Jake"
+
+      jakes-eye-color:
+        description: 'Eye color of the Jakes'
+        required: true
+        default: "Blue"
+    env:
+      DAY_OF_WEEK: Tuesday
+      Greeting: Hello
+
+    steps:
+      - name: "Say Hello Mona it's Monday"
+        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+        env:
+          First_Name: Sanyam
+
+        run: |
+          echo "Hii ${{ inputs.jake }},"
+          echo "I like your eye colour ${{ inputs.jakes-eye-color}}
