@@ -60,5 +60,5 @@ jobs:
           First_Name: Sanyam
 
         run: |
-        echo "Hii ${{ inputs.jake }},"
-        echo "I like your eye colour ${{ inputs.jakes-eye-color}}"
+          echo "Hii ${{ inputs.jake }},"
+          echo "I like your eye colour ${{ inputs.jakes-eye-color}}"
