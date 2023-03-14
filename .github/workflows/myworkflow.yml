@@ -59,7 +59,6 @@ jobs:
       name: ${{ github.event.inputs.jake }}
       eyeColor: ${{ github.event.inputs.jakesEyeColor }}
 
-
     runs-on: macos-latest
     steps:
       - name: "Say Hello, it's Monday"
@@ -70,3 +69,5 @@ jobs:
           echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
           echo "Hii $name,"
           echo "I like your eye colour $eyeColor."
+
+  
