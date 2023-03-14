@@ -6,7 +6,7 @@ on:
 
 jobs:
   crt-wf-ubuntu:
-    name: Check if any number is even/odd
+    name: Check Even/Odd
     runs-on: ubuntu-latest
     
     steps:
@@ -24,7 +24,7 @@ jobs:
 
   
   crt-wf-windows:
-    name: Lint code base in windows
+    name: Checking Prime number
     runs-on: windows-latest
     steps:
       - name: Checkout code
@@ -34,5 +34,5 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      - run: python scripts/hwlloActions.py
+      - run: python scripts/prime.py
   
