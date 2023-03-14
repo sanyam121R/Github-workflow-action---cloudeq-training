@@ -1,9 +1,10 @@
-def evenodd(l):
-    for i in l:
-        if i%2==0:
-            print("Even")
-        else:
-            print("Odd")
+def evenodd(a, b):
+    if int(a)%2==0 or int(b)%2==0:
+        print("Even")
+    else:
+        print("Odd")
 
-l = list(map(int, input().split()))
-evenodd(l)
+# l = list(map(int, input().split()))
+
+a, b = input().split()
+evenodd(a, b)
