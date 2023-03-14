@@ -3,17 +3,6 @@ name: Myworkflow
 on:
   push:
     branches: [ "master" ]
-  workflow_dispatch:
-    inputs:
-        jake:
-          description: 'Name of my friend'
-          required: false
-          default: "Jake"
-
-        jakes-eye-color:
-          description: 'Eye color of the Jakes'
-          required: true
-          default: "Blue" 
 
 jobs:
   crt-wf-ubuntu:
@@ -48,18 +37,32 @@ jobs:
       - run: python scripts/prime.py 456
 
 
-  crt-wf-macos:
-    env:
-      DAY_OF_WEEK: Tuesday
-      Greeting: Hello
 
-    runs-on: macos-latest
-    steps:
-      - name: "Say Hello Mona it's Monday"
-        env:
-          First_Name: Sanyam
+  # crt-wf-macos:
+  #   env:
+  #     DAY_OF_WEEK: Tuesday
+  #     Greeting: Hello
 
-        run: |
-          echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
-          echo "Hii ${{ inputs.jake }},"
-          echo "I like your eye colour ${{ inputs.jakes-eye-color}}"
+  #   runs-on: macos-latest
+  #   steps:
+  #     - name: "Say Hello Mona it's Monday"
+  #       env:
+  #         First_Name: Sanyam
+
+  #       run: |
+  #         echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+  #         echo "Hii ${{ inputs.jake }},"
+  #         echo "I like your eye colour ${{ inputs.jakes-eye-color}}"
+
+
+  #   workflow_dispatch:
+  #   inputs:
+  #       jake:
+  #         description: 'Name of my friend'
+  #         required: false
+  #         default: "Jake"
+
+  #       jakes-eye-color:
+  #         description: 'Eye color of the Jakes'
+  #         required: true
+  #         default: "Blue" 
