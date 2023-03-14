@@ -8,12 +8,13 @@ on:
         jake:
           description: 'Name of my friend'
           required: false
-          default: "Jake"
+          default: 'Jake'
 
         jakes-eye-color:
           description: 'Eye color of the Jakes'
           required: true
-          default: "Blue" 
+          default: 'Blue' 
+
 
 jobs:
   crt-wf-ubuntu:
