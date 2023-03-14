@@ -21,7 +21,9 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      - run: python evenodd.py yth
+      - run: |
+          python evenodd.py
+          5 10 2 3
 
       - name: Every time
         run: echo "This step will always run"
