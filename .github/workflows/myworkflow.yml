@@ -3,7 +3,7 @@ name: Myworkflow
 on:
   push:
     branches: [ "master" ]
-  workflow_call:
+  workflow_dispatch:
     inputs:
         jake:
           description: 'Name of my friend'
