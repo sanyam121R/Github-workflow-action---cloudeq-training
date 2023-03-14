@@ -6,7 +6,7 @@ on:
 
 jobs:
   crt-wf-ubuntu:
-    name: Check if any number is even or odd
+    name: Check if any number is even/odd
     runs-on: ubuntu-latest
     
     steps:
