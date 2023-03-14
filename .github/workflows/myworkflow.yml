@@ -38,7 +38,6 @@ jobs:
 
 
   crt-wf-macos:
-    runs-on: macos-latest
     inputs:
       jake:
         description: 'Name of my friend'
@@ -53,6 +52,7 @@ jobs:
       DAY_OF_WEEK: Tuesday
       Greeting: Hello
 
+    runs-on: macos-latest
     steps:
       - name: "Say Hello Mona it's Monday"
         run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
