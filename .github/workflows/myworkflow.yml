@@ -52,10 +52,11 @@ jobs:
   crt-wf-macos:
     name: Using input and env context  
     env:
-      name: ${{ github.event.inputs.jake }}
-      eye-color: ${{ github.event.inputs.jakes-eye-color }}
       DAY_OF_WEEK: Tuesday
       Greeting: Hello
+      name: ${{ github.event.inputs.jake }}
+      eye-color: ${{ github.event.inputs.jakes-eye-color }}
+
 
     runs-on: macos-latest
     steps:
@@ -66,4 +67,4 @@ jobs:
         run: |
           echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
           echo "Hii $name,"
-          echo "I like your eye colour $eye-color."
+          echo "I like your eye colour ${eye-color}."
