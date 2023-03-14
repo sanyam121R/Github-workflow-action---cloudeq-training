@@ -1,15 +1,11 @@
 name: Myworkflow
 
-on: 
+on:
   push:
-    branches: [master]
-  workflow_dispatch:
-    # inputs:
-    #   py_list:
-    #     description: 'Giving the inputs in python file'     
-    #     required: true
-    #     default: [5, 10, 1, 2]
+    branches: [ "main" ]
 
+  workflow_dispatch:
+  
 jobs:
   crt-wf-ubuntu:
     name: Lint code base in ubuntu
