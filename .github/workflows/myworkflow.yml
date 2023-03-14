@@ -2,11 +2,11 @@ name: Myworkflow
 
 on: push
   workflow_dispatch:
-    inputs:
-      py_list:
-        description: 'Giving the inputs in python file'     
-        required: true
-        default: [5, 10, 1, 2]
+    # inputs:
+    #   py_list:
+    #     description: 'Giving the inputs in python file'     
+    #     required: true
+    #     default: [5, 10, 1, 2]
 
 jobs:
   crt-wf-ubuntu:
