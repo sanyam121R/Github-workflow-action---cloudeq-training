@@ -9,8 +9,7 @@ on:
           description: 'Name of my friend'
           required: false
           default: 'Jake'
-
-        jakes-eye-color:
+        jakesEyeColor:
           description: 'Eye color of the Jakes'
           required: true
           default: 'Blue' 
@@ -55,7 +54,7 @@ jobs:
       DAY_OF_WEEK: Tuesday
       Greeting: Hello
       name: ${{ github.event.inputs.jake }}
-      eye-color: ${{ github.event.inputs.jakes-eye-color }}
+      eyeColor: ${{ github.event.inputs.jakesEyeColor }}
 
 
     runs-on: macos-latest
@@ -67,4 +66,4 @@ jobs:
         run: |
           echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
           echo "Hii $name,"
-          echo "I like your eye colour ${eye-color}."
+          echo "I like your eye colour $eyeColor."
