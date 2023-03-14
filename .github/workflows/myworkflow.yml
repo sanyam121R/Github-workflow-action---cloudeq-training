@@ -3,6 +3,17 @@ name: Myworkflow
 on:
   push:
     branches: [ "master" ]
+  workflow_call:
+    inputs:
+        jake:
+          description: 'Name of my friend'
+          required: false
+          default: "Jake"
+
+        jakes-eye-color:
+          description: 'Eye color of the Jakes'
+          required: true
+          default: "Blue" 
 
 jobs:
   crt-wf-ubuntu:
@@ -38,16 +49,6 @@ jobs:
 
 
   crt-wf-macos:
-    inputs:
-      jake:
-        description: 'Name of my friend'
-        required: false
-        default: "Jake"
-
-      jakes-eye-color:
-        description: 'Eye color of the Jakes'
-        required: true
-        default: "Blue"
     env:
       DAY_OF_WEEK: Tuesday
       Greeting: Hello
