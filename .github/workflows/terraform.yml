@@ -4,6 +4,15 @@ on:
   push:
     branches: [ "master" ]
   workflow_dispatch:
+    inputs : 
+      region :
+        description: "Enter your region : "
+        required: true  
+        type: string 
+
+env:
+  TFSTATE_FILE: terraform.tfstate
+  aws_region: ${{ github.event.inputs.region }}
 
 
 jobs:
