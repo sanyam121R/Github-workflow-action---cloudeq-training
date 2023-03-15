@@ -13,7 +13,8 @@ on:
           description: 'Eye color of the Jakes'
           required: true
           default: 'Blue' 
-
+        choose:
+          type: choice
 
 jobs:
   crt-wf-ubuntu:
