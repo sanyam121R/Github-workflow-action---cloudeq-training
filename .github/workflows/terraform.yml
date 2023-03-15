@@ -7,12 +7,15 @@ on:
     inputs : 
       region :
         description: "Enter your region : "
-        required: true  
+        required: true
+        default: "ap-south-1"
         type: string 
 
 env:
   TFSTATE_FILE: terraform.tfstate
   aws_region: ${{ github.event.inputs.region }}
+  BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}
+  BUCKET: "sanyam-s3"
 
 
 jobs:
@@ -27,6 +30,8 @@ jobs:
 
       - name: Terraform hashicorp setup
         uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.3.0
 
 
       - name: Configure AWS Credentials
@@ -55,7 +60,12 @@ jobs:
         # if: github.event_name == 'pull_request'
         run: terraform plan
 
+      - name: terraform init
+        run: |
+          cd module
+          terraform init -reconfigure -backend-config="bucket=${{ env.BUCKET }}" -backend-config="key=${{ env.BUCKET_TF_STATE }}" -backend-config="region=${{ env.aws_region }}"
       
+
       - name: Update Pull Request
         uses: actions/github-script@v6
         # if: github.event_name == 'pull_request'
@@ -87,11 +97,12 @@ jobs:
             })
 
               
+
+      
       - name: Terraform Plan Status
         if: steps.plan.outcome == 'failure'
         run: exit 1
 
-        
       - name: Terraform Apply
         # if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
