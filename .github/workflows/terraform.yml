@@ -21,7 +21,7 @@ env:
 jobs:
   terraform-init-plan-apply:
     name: Terraform init, plan, apply
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     permissions:
       pull-requests: write
     steps:
